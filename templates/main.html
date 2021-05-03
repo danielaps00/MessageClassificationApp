@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}main{% endblock %}
+{% block body %}
+<body>
+    <div class="container">
+        <a href="/logout"><button class="btn btn-danger float-right mt-2">keluar</button></a>
+        <h1>Aplikasi Klasifikasi Pesan</h1>
+        <form action="{{url_for('klasifikasi')}}" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputEmail4">Subjek :</label>
+                <input type="tex" name="subjek" class="form-control" id="inputEmail4" placeholder="masukan subjek" required> 
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Pesan :</label>
+                <textarea class="form-control" name="pesan" id="exampleFormControlTextarea1" rows="8" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Kirim</button>
+        </form>
+        {% block content %}{% endblock %}
+    </div>    
+</body>
+{% endblock %}

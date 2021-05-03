@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<body>
+	<div class="container">
+	  <div class="row">
+		<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+		  <div class="card card-signin my-5">
+			<div class="card-body">
+			  <h5 class="card-title text-center">Login</h5>
+			  <p class="text-center">login menggunakan akun gmail anda</p>
+			  <form class="form-signin" action="{{url_for('main')}}" method="post">
+				<div class="form-label-group">
+				  <label for="inputEmail">Email address</label>
+				  <input type="email" id="inputEmail" name="email" class="form-control" placeholder="alamat gmail anda" required autofocus>
+				</div>
+				<div class="form-label-group mt-2">
+				  <label for="inputPassword">Password</label>
+				  <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="password gmail anda" required>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" type="submit">Login</button>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  {% block content %}{% endblock %}
+	</div>
+</body>
+{% endblock %}
